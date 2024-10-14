@@ -1,0 +1,47 @@
+seconds
+
+1:00 total
+600 frames
+
+* 1- 4
+100% no break = 1.4 * wave size
+
+4- 7
+curl pitches and hits water
+
+5
+oli rig appears
+
+7- 15
+curl remains steady size (
+
+15- 17
+curl decreaes to 0%
+
+7- 25
+wave steadily decreases to 60%
+
+25- 27
+wave increases to 75 %
+
+* 27-30
+curl pitches and hits water
+
+30- 37
+curl remains steady size (or shrinks with wave)
+
+37- 40
+curl decreases to 0%
+
+35 
+pier appears
+
+48-58
+wave decreases to 25%
+
+58- 60
+wave decreases to 0%
+
+
+
+

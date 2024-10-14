@@ -1,0 +1,878 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&file"
+    BEGIN
+        MENUITEM "show directx &errors",        ID_SHOW_ERRORS
+        MENUITEM "view &hiscores",              ID_VIEW_HISCORES
+        MENUITEM SEPARATOR
+        MENUITEM "e&xit",                       IDCLOSE
+    END
+    POPUP "&cameras"
+    BEGIN
+        MENUITEM "&main camera\tf1",            ID_MAIN_CAMERA
+        MENUITEM "&helicopter camera\tf2",      ID_HELICOPTER_CAMERA
+        MENUITEM "&tube camera\tf3",            ID_TUBE_CAMERA
+        MENUITEM "&beach camera\tf4",           ID_BEACH_CAMERA
+        MENUITEM "&satellite camera\tf5",       ID_SATELLITE_CAMERA
+        MENUITEM "&rock video camera\tf6",      ID_ROCK_VIDEO_CAMERA
+        MENUITEM "bac&k beach camera\tf7",      ID_BEACH_CAMERA2
+        MENUITEM SEPARATOR
+        MENUITEM "&auto camera\tf8",            ID_AUTO_CAMERA
+    END
+    POPUP "&details"
+    BEGIN
+        MENUITEM "&current fps       (ctrl-f)", ID_FPS
+        MENUITEM SEPARATOR
+        MENUITEM "practice &mode",              ID_PRACTICE
+        MENUITEM "&breaking wave",              ID_BREAKINGWAVE
+        MENUITEM "&foam",                       ID_FOAM
+        MENUITEM "&gore",                       ID_GORE
+        MENUITEM "hori&zon",                    ID_HORIZON
+        MENUITEM "&sky",                        ID_SKYMAP
+        MENUITEM "speed-&o-meter",              ID_SPEEDOMETER_TOGGLE
+        MENUITEM "score &display",              ID_SCORETOGGLE
+        MENUITEM "s&pray",                      ID_SPRAY
+        MENUITEM "&wave textures",              ID_WAVE_TEXTURES
+        MENUITEM SEPARATOR
+        MENUITEM "&halfres",                    ID_HALFRES
+        MENUITEM "&texture filtering",          ID_TEXTURE_FILTER
+        POPUP "fu&llscreen"
+        BEGIN
+            MENUITEM SEPARATOR
+        END
+        POPUP "d&3d driver"
+        BEGIN
+            MENUITEM SEPARATOR
+        END
+    END
+    POPUP "&audio"
+    BEGIN
+        MENUITEM "&cd music",                   ID_CD_MUSIC
+        MENUITEM "&midi music",                 ID_MIDI_MUSIC
+        MENUITEM "sound &fx",                   ID_SOUND_FX
+        MENUITEM "&announcer",                  ID_NARATION
+        MENUITEM "&surfer sounds",              ID_SURFER_SOUNDS
+    END
+    POPUP "&help"
+    BEGIN
+//        MENUITEM "&help",                       ID_HELPF
+        MENUITEM "&about wild ride...",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 188, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Wild Ride! 1.1"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_SURF,IDI_SURF,7,7,18,20
+    CTEXT           "copyright © 1998 RUNANDGUN! Inc.",IDC_STATIC,7,106,174,
+                    8
+    DEFPUSHBUTTON   "ok",IDOK,149,7,32,14,WS_GROUP
+    CTEXT           "Wild Ride! 1.22",IDC_STATIC,36,13,107,10
+    CTEXT           "Check out the Wild Ride! web page at http://www.runandgun.com/wildride for upgrades, patches, secrets, and information on upcoming products.",
+                    IDC_STATIC,7,34,174,62
+END
+
+IDD_LEROY DIALOGEX 0, 0, 213, 122
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Leroy's check list"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ok",IDOK,77,102,40,14
+    PUSHBUTTON      "cancel",IDCANCEL,167,102,40,14
+    CONTROL         391,IDC_LEROY_IMAGE,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | SS_SUNKEN,6,6,68,111,
+                    WS_EX_TRANSPARENT
+    CONTROL         "(re-entry)",IDC_TIME,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,6,129,11
+    CONTROL         "(extra life)",IDC_LIFE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,19,129,11
+    CONTROL         "(score)",IDC_SCORE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,32,129,11
+    CONTROL         "(summon semjase)",IDC_UFO,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,45,129,11
+    CONTROL         "(cheat keys numpad)",IDC_CHEATKEYS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,58,129,11
+    CONTROL         "(beach nav mdoe)",IDC_NAVMODE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,71,129,11
+    CONTROL         "(tron mode)",IDC_TRON,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,84,129,11
+    PUSHBUTTON      "CD track listings and  play selector",IDC_LEROY_FACE,12,
+                    12,55,98,BS_CENTER | BS_MULTILINE | NOT WS_TABSTOP
+END
+
+IDD_LOAD_PROGRESS DIALOG DISCARDABLE  0, 0, 172, 190
+STYLE DS_SETFOREGROUND | WS_POPUP | WS_VISIBLE | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Loading Wild Ride! 1.22...",IDC_TEXT,4,162,163,10,
+                    SS_SUNKEN
+    CONTROL         "Progress2",IDC_GRAPH,"msctls_progress32",0x0,4,176,163,
+                    10
+    CONTROL         167,IDC_STATIC,"Static",SS_BITMAP,0,0,172,158
+END
+
+IDD_TRACKS DIALOG DISCARDABLE  0, 0, 318, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Leroy's favorite songs"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "ok",IDOK,192,193,50,13
+    PUSHBUTTON      "cancel",IDCANCEL,262,194,50,12
+    CONTROL         "2 (2:02) Wild Ride! Theme by Randy Wilson",IDC_CHECK1,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,6,153,17
+    CONTROL         "3 (1:30) ""Mrs. Natural"" vs. Mother Nature by Randy Wilson",
+                    IDC_CHECK2,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,
+                    23,153,17
+    CONTROL         "4 (1:59) Bucky The Punk by Randy Wilson",IDC_CHECK3,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,40,153,17
+    CONTROL         "5 (2:06) The ""Jersey Slim"" Shuffle by Randy Wilson, Grady Sain and Jeremy Evers",
+                    IDC_CHECK4,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,
+                    57,153,17
+    CONTROL         "6 (2:25) Sandy Dunes by Randy Wilson",IDC_CHECK5,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,74,153,17
+    CONTROL         "7 (2:03) ""The Healer"" Hoedown by Randy Wilson",
+                    IDC_CHECK6,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,
+                    91,153,17
+    CONTROL         "8 (1:59) ""The Samoan Fro"" by Vic Vacume and the Attachements",
+                    IDC_CHECK7,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,
+                    108,153,17
+    CONTROL         "9 (1:16) Heavy Choices, Dude by Randy Wilson",
+                    IDC_CHECK8,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,
+                    125,153,17
+    CONTROL         "10 (1:14) I'll Surf Yet Again (The Game Over Theme) by Randy Wilson",
+                    IDC_CHECK9,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,
+                    142,153,17
+    CONTROL         "11 (1:52) Surfer's Enema by Randy Wilson",IDC_CHECK10,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,159,153,17
+    CONTROL         "12 (0:52) Sand Sammich by Randy Wilson",IDC_CHECK11,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,6,176,147,17
+    CONTROL         "13 (0:47) High Flyin' High Score! by Randy Wilson",
+                    IDC_CHECK12,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,
+                    159,6,153,17
+    CONTROL         "14 (1:28) Pummeled by Randy Wilson",IDC_CHECK13,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,159,23,153,17
+    CONTROL         "15 (1:34) (Goin' for a) Ride in the Ambulance by Randy Wilson and Jeremy Evers",
+                    IDC_CHECK14,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,
+                    159,40,153,17
+    CONTROL         "16 (1:35) Hang 11 or 12 by Randy Wilson",IDC_CHECK15,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,159,57,153,17
+    CONTROL         "17 * (0:34) Tobny by Randy Wilson",IDC_CHECK16,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,159,74,153,17
+    CONTROL         "18 * (1:24) Gutrot by Randy Wilson",IDC_CHECK17,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,159,91,153,17
+    CONTROL         "19 * (2:19) Broken Finger by Randy Wilson, Grady Sain and Jeremy Evers",
+                    IDC_CHECK18,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,
+                    159,108,153,17
+    CONTROL         "20 * (1:09) Nasal Lunk by Negspect",IDC_CHECK19,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,159,125,153,
+                    17
+    CONTROL         "21 * (2:58) The Mountain Wumpus by Negspect",
+                    IDC_CHECK20,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,
+                    159,142,153,17
+    LTEXT           "guest speaker Bill Gates and beatboxing by the late Buffy, the Human Beat Box)",
+                    IDC_STATIC,171,175,141,18
+    CONTROL         "22 * (10:07) Hurry Orenbu, Aquire the Token by Vinguagez and Negspect (with special",
+                    IDC_CHECK21,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,
+                    159,159,153,17
+    CONTROL         630,IDC_VLAACHOS,"Static",SS_BITMAP | SS_SUNKEN,151,186,
+                    18,20
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "RUNANDGUN! inc.\0"
+            VALUE "FileDescription", "Wild Ride! 1.22\0"
+            VALUE "FileVersion", "1, 2, 0, 1\0"
+            VALUE "InternalName", "Wild Ride! 1.22\0"
+            VALUE "LegalCopyright", "Copyright © 1998\0"
+            VALUE "LegalTrademarks", "everything, you name it...\0"
+            VALUE "OriginalFilename", "wildride.exe\0"
+            VALUE "ProductName", "Wild Ride! 1.22\0"
+            VALUE "ProductVersion", "1, 2, 0, 1\0"
+        END
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "RUNANDGUN! inc.\0"
+            VALUE "FileDescription", "Wild Ride! 1.22\0"
+            VALUE "FileVersion", "1, 2, 0, 1\0"
+            VALUE "InternalName", "Wild Ride 1.22\0"
+            VALUE "LegalCopyright", "Copyright © 1998\0"
+            VALUE "LegalTrademarks", "everything, you name it...\0"
+            VALUE "OriginalFilename", "wildride.exe\0"
+            VALUE "ProductName", "Wild Ride! 1.22\0"
+            VALUE "ProductVersion", "1, 2, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200, 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_LEROY, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 207
+        VERTGUIDE, 12
+        VERTGUIDE, 67
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 116
+        HORZGUIDE, 12
+        HORZGUIDE, 110
+    END
+
+    IDD_LOAD_PROGRESS, DIALOG
+    BEGIN
+        VERTGUIDE, 4
+        VERTGUIDE, 167
+    END
+
+    IDD_TRACKS, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 312
+        VERTGUIDE, 159
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 206
+        HORZGUIDE, 23
+        HORZGUIDE, 40
+        HORZGUIDE, 57
+        HORZGUIDE, 74
+        HORZGUIDE, 91
+        HORZGUIDE, 108
+        HORZGUIDE, 125
+        HORZGUIDE, 142
+        HORZGUIDE, 159
+        HORZGUIDE, 176
+        HORZGUIDE, 193
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS DISCARDABLE 
+BEGIN
+    "F",            ID_FPS,                 VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_MAIN_CAMERA,         VIRTKEY, NOINVERT
+    VK_F2,          ID_HELICOPTER_CAMERA,   VIRTKEY, NOINVERT
+    VK_F3,          ID_TUBE_CAMERA,         VIRTKEY, NOINVERT
+    VK_F4,          ID_BEACH_CAMERA,        VIRTKEY, NOINVERT
+    VK_F5,          ID_SATELLITE_CAMERA,    VIRTKEY, NOINVERT
+    VK_F6,          ID_ROCK_VIDEO_CAMERA,   VIRTKEY, NOINVERT
+    VK_F7,          ID_BEACH_CAMERA2,       VIRTKEY, NOINVERT
+    VK_F8,          ID_AUTO_CAMERA,         VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ALPHABET            BITMAP  DISCARDABLE     "alphabet.BMP"
+IDB_INTERFACE           BITMAP  DISCARDABLE     "newinterface.BMP"
+IDB_SPINSPEED           BITMAP  DISCARDABLE     "spin_speed.bmp"
+IDB_SURFSKY             BITMAP  DISCARDABLE     "surfsky.bmp"
+IDB_LEROY               BITMAP  DISCARDABLE     "indian.bmp"
+IDB_1947SPLASH          BITMAP  DISCARDABLE     "finalsplash.BMP"
+IDB_LOGO                BITMAP  DISCARDABLE     "logo.BMP"
+IDB_NAV                 BITMAP  DISCARDABLE     "nav.BMP"
+IDB_VLAACHOS            BITMAP  DISCARDABLE     "Vlaachos.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PPM
+//
+
+IDR_WAVEMAP0            PPM     DISCARDABLE     "Newav1.ppm"
+IDR_WAVEMAP1            PPM     DISCARDABLE     "newav2.ppm"
+IDR_WAVEMAP2            PPM     DISCARDABLE     "Newav3.ppm"
+IDR_WAVEMAP3            PPM     DISCARDABLE     "Newav4.ppm"
+IDR_WAVEMAP4            PPM     DISCARDABLE     "Newav5.ppm"
+IDR_WAVEMAP5            PPM     DISCARDABLE     "Newav6.ppm"
+IDR_WAVEMAP6            PPM     DISCARDABLE     "Newav7.ppm"
+IDR_WAVEMAP7            PPM     DISCARDABLE     "Newav8.ppm"
+IDR_UFOMAP              PPM     DISCARDABLE     "ufomap.ppm"
+IDR_FOAMMAP0            PPM     DISCARDABLE     "FOAM0.ppm"
+IDR_FOAMMAP1            PPM     DISCARDABLE     "FOAM1.ppm"
+IDR_FOAMMAP2            PPM     DISCARDABLE     "FOAM2.ppm"
+IDR_FOAMMAP3            PPM     DISCARDABLE     "FOAM3.ppm"
+IDR_FOAMMAP4            PPM     DISCARDABLE     "foam4.ppm"
+IDR_FOAMMAP5            PPM     DISCARDABLE     "foam5.ppm"
+IDR_FOAMMAP6            PPM     DISCARDABLE     "foam6.ppm"
+IDR_FOAMMAP7            PPM     DISCARDABLE     "foam7.ppm"
+IDR_BARRELMAP           PPM     DISCARDABLE     "BARREL.ppm"
+IDR_BUILDALLMAP         PPM     DISCARDABLE     "buildall.ppm"
+IDR_SANDMAP             PPM     DISCARDABLE     "sandmaster.ppm"
+IDR_THATCHMAP           PPM     DISCARDABLE     "thatch.ppm"
+IDR_HLXWALLMAP          PPM     DISCARDABLE     "hlxwalls.ppm"
+IDR_VANMAP              PPM     DISCARDABLE     "vanetc.ppm"
+IDR_SHUTTERMAP          PPM     DISCARDABLE     "hlshutr.ppm"
+IDR_OPTIONMAP           PPM     DISCARDABLE     "options.ppm"
+IDR_SURFSIGNMAP         PPM     DISCARDABLE     "surfsign.ppm"
+IDR_SPRAYMAP0           PPM     DISCARDABLE     "spraydekl0.ppm"
+IDR_SPRAYMAP1           PPM     DISCARDABLE     "spraydekl1.ppm"
+IDR_SPRAYMAP2           PPM     DISCARDABLE     "spraydekl2.ppm"
+IDR_SPRAYMAP3           PPM     DISCARDABLE     "spraydekl3.ppm"
+IDR_SPRAYMAP4           PPM     DISCARDABLE     "spraydekl4.ppm"
+IDR_SPRAYMAP5           PPM     DISCARDABLE     "spraydekl5.ppm"
+IDR_SPRAYMAP6           PPM     DISCARDABLE     "spraydekl6.ppm"
+IDR_SPRAYMAP7           PPM     DISCARDABLE     "spraydekl7.ppm"
+IDR_BLOODMAP0           PPM     DISCARDABLE     "blood3.ppm"
+IDR_BLOODMAP1           PPM     DISCARDABLE     "blood4.ppm"
+IDR_BLOODMAP2           PPM     DISCARDABLE     "blood5.ppm"
+IDR_BLOODMAP3           PPM     DISCARDABLE     "blood6.ppm"
+IDR_BLOODMAP4           PPM     DISCARDABLE     "blood7.ppm"
+IDR_BLOODMAP5           PPM     DISCARDABLE     "blood8.ppm"
+IDR_PIERMAP             PPM     DISCARDABLE     "piermap.ppm"
+IDR_WRBEACHMAP          PPM     DISCARDABLE     "WRBEACH.ppm"
+IDR_SFLOGOMAP           PPM     DISCARDABLE     "sflogo.ppm"
+IDR_CSGUYMAP            PPM     DISCARDABLE     "Csguy.ppm"
+IDR_HLGUYMAP            PPM     DISCARDABLE     "HLGUY.ppm"
+IDR_WATERMAP            PPM     DISCARDABLE     "watermaster.ppm"
+IDR_MOUNTAINMAP         PPM     DISCARDABLE     "mountain.ppm"
+IDR_ALANAMAP            PPM     DISCARDABLE     "Alana.ppm"
+IDR_LEEMAP              PPM     DISCARDABLE     "lee.ppm"
+IDR_BUCKYMAP            PPM     DISCARDABLE     "BUCKY.ppm"
+IDR_TODDMAP             PPM     DISCARDABLE     "todd.ppm"
+IDR_SANDYMAP            PPM     DISCARDABLE     "sandy.ppm"
+IDR_VICMAP              PPM     DISCARDABLE     "vic.ppm"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_SINKWAVE            WAVE    DISCARDABLE     "bluber1.wav"
+IDR_OCEANWAVE           WAVE    DISCARDABLE     "WAVMIX2.wav"
+IDR_GAMEOVERWAVE        WAVE    DISCARDABLE     "gameover.wav"
+IDR_SEAGULLWAVE1        WAVE    DISCARDABLE     "GULLS.wav"
+IDR_SPLASHWAVE          WAVE    DISCARDABLE     "splash2.wav"
+IDR_UFOWAVE             WAVE    DISCARDABLE     "ufo.wav"
+IDR_180WAVE1            WAVE    DISCARDABLE     "180.wav"
+IDR_180WAVE2            WAVE    DISCARDABLE     "180-2.wav"
+IDR_360WAVE1            WAVE    DISCARDABLE     "360.wav"
+IDR_360WAVE2            WAVE    DISCARDABLE     "360-2.wav"
+IDR_540WAVE1            WAVE    DISCARDABLE     "540.wav"
+IDR_540WAVE2            WAVE    DISCARDABLE     "540-2.wav"
+IDR_720WAVE1            WAVE    DISCARDABLE     "720.wav"
+IDR_720WAVE2            WAVE    DISCARDABLE     "720-2.wav"
+IDR_900WAVE1            WAVE    DISCARDABLE     "900.wav"
+IDR_900WAVE2            WAVE    DISCARDABLE     "900-2.wav"
+IDR_DOUBLEINSANEWAVE1   WAVE    DISCARDABLE     "DOUBL.wav"
+IDR_DOUBLEINSANEWAVE2   WAVE    DISCARDABLE     "DOUBL2.wav"
+IDR_TRIPLEINSANEWAVE1   WAVE    DISCARDABLE     "TRIPL2.wav"
+IDR_TRIPLEINSANEWAVE2   WAVE    DISCARDABLE     "TRIPL3.wav"
+IDR_QUADRUPLEINSANEWAVE1 WAVE    DISCARDABLE     "QUAD.wav"
+IDR_QUADRUPLEINSANEWAVE2 WAVE    DISCARDABLE     "QUAD2.wav"
+IDR_SURFWAVE1           WAVE    DISCARDABLE     "SURF2.wav"
+IDR_SURFWAVE2           WAVE    DISCARDABLE     "SURF3.wav"
+IDR_SURFWAVE3           WAVE    DISCARDABLE     "SURF4.wav"
+IDR_BARRELWAVE          WAVE    DISCARDABLE     "BARREL1.wav"
+IDR_BOUYWAVE            WAVE    DISCARDABLE     "collis2.wav"
+IDR_UFOCWAVE            WAVE    DISCARDABLE     "crowd.wav"
+IDR_ROCKWAVE            WAVE    DISCARDABLE     "NEWROCK.wav"
+IDR_PLIDWAVE            WAVE    DISCARDABLE     "collis1.wav"
+IDR_POSTWAVE            WAVE    DISCARDABLE     "CRUNCH.wav"
+IDR_OUCHWAVE            WAVE    DISCARDABLE     "OUCH.wav"
+IDR_REEFWAVE            WAVE    DISCARDABLE     "REEF3.wav"
+IDR_MANGLEDWAVE         WAVE    DISCARDABLE     "MANGLD3.wav"
+IDR_HISCOREWAVE1        WAVE    DISCARDABLE     "HISCOR2.wav"
+IDR_HISCOREWAVE2        WAVE    DISCARDABLE     "HISCOR3.wav"
+IDR_BOUYWAVE2           WAVE    DISCARDABLE     "BOUY.wav"
+IDR_ROCKWAVE2           WAVE    DISCARDABLE     "NEWROC3.wav"
+IDR_SHARKWAVE           WAVE    DISCARDABLE     "SKRK+.wav"
+IDR_SHARKWAVE2          WAVE    DISCARDABLE     "SKRK2.wav"
+IDR_BARRELWAVE2         WAVE    DISCARDABLE     "NEWROC2.wav"
+IDR_PLIDWAVE2           WAVE    DISCARDABLE     "PIER3.wav"
+IDR_POSTWAVE2           WAVE    DISCARDABLE     "PEIR2.wav"
+IDR_STEAMSHIPWAVE       WAVE    DISCARDABLE     "steamshi.wav"
+IDR_UFOSTOPWAVE         WAVE    DISCARDABLE     "ufo1.wav"
+IDR_DOLPHINWAVE         WAVE    DISCARDABLE     "dolfin3.wav"
+IDR_DOLPHINWAVE2        WAVE    DISCARDABLE     "dolfin4.wav"
+IDR_BREAKHITWAVE1       WAVE    DISCARDABLE     "HITBREK.wav"
+IDR_BREAKHITWAVE2       WAVE    DISCARDABLE     "HITBREK2.wav"
+IDR_TUBEWAVE            WAVE    DISCARDABLE     "TUBE2.wav"
+IDR_DOLPHINHITWAVE1     WAVE    DISCARDABLE     "DOLFHIT.wav"
+IDR_DOLPHINHITWAVE2     WAVE    DISCARDABLE     "DOLFHIT2.wav"
+IDR_OILRIGWAVE1         WAVE    DISCARDABLE     "oilrig.wav"
+IDR_OILRIGWAVE2         WAVE    DISCARDABLE     "oilrig2.wav"
+IDR_OILLEGWAVE1         WAVE    DISCARDABLE     "oilleg.wav"
+IDR_OILLEGWAVE2         WAVE    DISCARDABLE     "oilleg2.wav"
+IDR_LANDINGWAVE         WAVE    DISCARDABLE     "SPRAY7.wav"
+IDR_ALIENWAVE           WAVE    DISCARDABLE     "ALIEN2.wav"
+IDR_AMBULANCEWAVE       WAVE    DISCARDABLE     "AMB2.wav"
+IDR_BARRELDAVEWAVE1     WAVE    DISCARDABLE     "BARRELdave.wav"
+IDR_BARRELDAVEWAVE2     WAVE    DISCARDABLE     "BARRELdave3.wav"
+IDR_DOLPHINDISTURBWAVE  WAVE    DISCARDABLE     "DOLPHINdisturb.wav"
+IDR_GAMEOVERDAVEWAVE1   WAVE    DISCARDABLE     "GAMEOV7.wav"
+IDR_GAMEOVERDAVEWAVE2   WAVE    DISCARDABLE     "GAMEOVR3.wav"
+IDR_GAMEOVERDAVEWAVE3   WAVE    DISCARDABLE     "GAMEOVR6.wav"
+IDR_GROOVYTUBEWAVE1     WAVE    DISCARDABLE     "GROOVY.wav"
+IDR_GROOVYTUBEWAVE2     WAVE    DISCARDABLE     "GROOVY3.wav"
+IDR_MUSTHURTWAVE        WAVE    DISCARDABLE     "MUSTHURT.wav"
+IDR_OHHWAVE1            WAVE    DISCARDABLE     "OHH2.wav"
+IDR_OHHWAVE2            WAVE    DISCARDABLE     "OHH3.wav"
+IDR_ORBITWAVE           WAVE    DISCARDABLE     "ORBIT.wav"
+IDR_PIERACTIONWAVE      WAVE    DISCARDABLE     "PIERaction.wav"
+IDR_ROCKDAVEWAVE        WAVE    DISCARDABLE     "ROCKdave.wav"
+IDR_SURFSCHOOLWAVE      WAVE    DISCARDABLE     "SCOOL2.wav"
+IDR_SHARKDAVEWAVE1      WAVE    DISCARDABLE     "SHARKarama.wav"
+IDR_SHARKDAVEWAVE2      WAVE    DISCARDABLE     "SHARKarama2.wav"
+IDR_UFODAVEWAVE1        WAVE    DISCARDABLE     "UFOdave.wav"
+IDR_UFODAVEWAVE2        WAVE    DISCARDABLE     "UFOdave2.wav"
+IDR_WAGONWAVE           WAVE    DISCARDABLE     "WAGON.wav"
+IDR_WIPEOUTWAVE1        WAVE    DISCARDABLE     "WIPE1.wav"
+IDR_WIPEOUTWAVE2        WAVE    DISCARDABLE     "WIPE3.wav"
+IDR_WIPEOUTWAVE3        WAVE    DISCARDABLE     "WIPE6.wav"
+IDR_WIPEOUTWAVE4        WAVE    DISCARDABLE     "WIPE8.wav"
+IDR_WUSSYWAVE           WAVE    DISCARDABLE     "WUSSY.wav"
+IDR_TRICKWAVE1          WAVE    DISCARDABLE     "helotrik.wav"
+IDR_TRICKWAVE2          WAVE    DISCARDABLE     "trik8.wav"
+IDR_TRICKWAVE3          WAVE    DISCARDABLE     "TRIK1.wav"
+IDR_TRICKWAVE4          WAVE    DISCARDABLE     "TRIK2.wav"
+IDR_TRICKWAVE5          WAVE    DISCARDABLE     "TRIK3.wav"
+IDR_TRICKWAVE6          WAVE    DISCARDABLE     "TRIK4.wav"
+IDR_TRICKWAVE7          WAVE    DISCARDABLE     "TRIK6.wav"
+IDR_TRICKWAVE8          WAVE    DISCARDABLE     "TRIK7.wav"
+IDR_TRICKWAVE9          WAVE    DISCARDABLE     "TRICK.wav"
+IDR_RIDICULOUSINSANEWAVE1 WAVE    DISCARDABLE     "reedik2.wav"
+IDR_RIDICULOUSINSANEWAVE2 WAVE    DISCARDABLE     "reedik.wav"
+IDR_INSANEWAVE1         WAVE    DISCARDABLE     "INSANE2.wav"
+IDR_INSANEWAVE2         WAVE    DISCARDABLE     "INSANE.wav"
+IDR_SLALOMWAVE          WAVE    DISCARDABLE     "SPRAY3.wav"
+IDR_WHOOSHWAVE          WAVE    DISCARDABLE     "SPRAy4.wav"
+IDR_WIPEOUTWAVEA1       WAVE    DISCARDABLE     "ALAINa\\yell4.wav"
+IDR_WIPEOUTWAVEA2       WAVE    DISCARDABLE     "ALAINa\\NAWW.wav"
+IDR_WIPEOUTWAVEA3       WAVE    DISCARDABLE     "ALAINa\\DUHH.wav"
+IDR_WIPEOUTWAVEA4       WAVE    DISCARDABLE     "ALAINa\\yell5.wav"
+IDR_WIPEOUTWAVEL1       WAVE    DISCARDABLE     "LEEGROBANDIDO\\yell1.wav"
+IDR_WIPEOUTWAVEL2       WAVE    DISCARDABLE     "LEEGROBANDIDO\\gargle.wav"
+IDR_WIPEOUTWAVEL3       WAVE    DISCARDABLE     "LEEGROBANDIDO\\yell2.wav"
+IDR_WIPEOUTWAVEL4       WAVE    DISCARDABLE     "LEEGROBANDIDO\\yell3.wav"
+IDR_TRICKWAVEA1         WAVE    DISCARDABLE     "ALAINa\\GRUNT4.wav"
+IDR_TRICKWAVEA2         WAVE    DISCARDABLE     "ALAINa\\GRUNT3.wav"
+IDR_TRICKWAVEA3         WAVE    DISCARDABLE     "ALAINa\\GRUNT2.wav"
+IDR_TRICKWAVEL1         WAVE    DISCARDABLE     "LEEGROBANDIDO\\Laugh6.wav"
+IDR_TRICKWAVEL2         WAVE    DISCARDABLE     "LEEGROBANDIDO\\Laugh3.wav"
+IDR_TRICKWAVEL3         WAVE    DISCARDABLE     "LEEGROBANDIDO\\Laugh4.wav"
+IDR_TRICKWAVEL4         WAVE    DISCARDABLE     "LEEGROBANDIDO\\Laugh2.wav"
+IDR_HOLDWAVEA1          WAVE    DISCARDABLE     "ALAINa\\heldtrk.wav"
+IDR_360WAVEA1           WAVE    DISCARDABLE     "ALAINa\\HA!.wav"
+IDR_360WAVEA2           WAVE    DISCARDABLE     "ALAINa\\ALAIN.wav"
+IDR_TUBEWAVEA1          WAVE    DISCARDABLE     "ALAINa\\TUBE.wav"
+IDR_TUBEWAVEA2          WAVE    DISCARDABLE     "ALAINa\\FLUTTER.wav"
+IDR_DROPINWAVEA1        WAVE    DISCARDABLE     "ALAINa\\ALAINYELL.wav"
+IDR_DROPINWAVEA2        WAVE    DISCARDABLE     "ALAINa\\OOF.wav"
+IDR_DROPINWAVEA3        WAVE    DISCARDABLE     "ALAINa\\WOOP.wav"
+IDR_INSANITYWAVEA1      WAVE    DISCARDABLE     "ALAINa\\YOHAY.wav"
+IDR_HOLDWAVEL1          WAVE    DISCARDABLE     "LEEGROBANDIDO\\moan.wav"
+IDR_HOLDWAVEL2          WAVE    DISCARDABLE     "LEEGROBANDIDO\\HUM.wav"
+IDR_360WAVEL1           WAVE    DISCARDABLE     "LEEGROBANDIDO\\growl.wav"
+IDR_360WAVEL2           WAVE    DISCARDABLE     "LEEGROBANDIDO\\ooh.wav"
+IDR_TUBEWAVEL1          WAVE    DISCARDABLE     "LEEGROBANDIDO\\ICOULDB.wav"
+IDR_TUBEWAVEL2          WAVE    DISCARDABLE     "LEEGROBANDIDO\\YOWHAT.wav"
+IDR_DROPINWAVEL1        WAVE    DISCARDABLE     "LEEGROBANDIDO\\Laugh1.wav"
+IDR_DROPINWAVEL2        WAVE    DISCARDABLE     "LEEGROBANDIDO\\123.wav"
+IDR_DROPINWAVEL3        WAVE    DISCARDABLE     "LEEGROBANDIDO\\LEE.wav"
+IDR_INSANITYWAVEL1      WAVE    DISCARDABLE     "LEEGROBANDIDO\\HOT DIG.wav"
+IDR_INSANITYWAVEL2      WAVE    DISCARDABLE     "LEEGROBANDIDO\\hotdig2.wav"
+IDR_ANLEEWAVE           WAVE    DISCARDABLE     "ANNOUNCER\\LEE.wav"
+IDR_ANALANAWAVE         WAVE    DISCARDABLE     "ANNOUNCER\\ALAINA.wav"
+IDR_SEAGULLWAVE2        WAVE    DISCARDABLE     "ANNOUNCER\\GULL2.wav"
+IDR_TRICKWAVE10         WAVE    DISCARDABLE     "trik9.wav"
+IDR_UWONWAVE            WAVE    DISCARDABLE     "ANNOUNCER\\Crowd3.wav"
+IDR_RUNOVERWAVE2        WAVE    DISCARDABLE     "ANNOUNCER\\RUNOVER.wav"
+IDR_RUNOVERWAVE1        WAVE    DISCARDABLE     "ANNOUNCER\\ufinished.wav"
+IDR_USUREWAVE1          WAVE    DISCARDABLE     "ANNOUNCER\\AREYOUSUR.wav"
+IDR_ANBUCKYWAVE         WAVE    DISCARDABLE     "ANNOUNCER\\BUCKY.wav"
+IDR_DISQUALIFYWAVE1     WAVE    DISCARDABLE     "ANNOUNCER\\DISQUALIF.wav"
+IDR_DISQUALIFYWAVE3     WAVE    DISCARDABLE     "ANNOUNCER\\DISQUALIF2.wav"
+IDR_HEATOVERWAVE1       WAVE    DISCARDABLE     "ANNOUNCER\\HEATOVER.wav"
+IDR_HEATOVERWAVE2       WAVE    DISCARDABLE     "ANNOUNCER\\HEATOVR2.wav"
+IDR_USUREWAVE2          WAVE    DISCARDABLE     "ANNOUNCER\\ISTHATWHAT.wav"
+IDR_DISQUALIFYWAVE2     WAVE    DISCARDABLE     "NXTYEAR.wav"
+IDR_ANVICWAVE           WAVE    DISCARDABLE     "ANNOUNCER\\VIC.wav"
+IDR_ANSANDYWAVE         WAVE    DISCARDABLE     "ANNOUNCER\\SANDY.wav"
+IDR_ANTODDWAVE          WAVE    DISCARDABLE     "ANNOUNCER\\TODD.wav"
+IDR_TRICKWAVES1         WAVE    DISCARDABLE     "SANDY\\HIYA.wav"
+IDR_TRICKWAVES2         WAVE    DISCARDABLE     "SANDY\\GRUNT1.wav"
+IDR_TRICKWAVES3         WAVE    DISCARDABLE     "SANDY\\EEK.wav"
+IDR_TRICKWAVES4         WAVE    DISCARDABLE     "SANDY\\YA.wav"
+IDR_TRICKWAVET1         WAVE    DISCARDABLE     "TODDHEALER\\LAUGH.wav"
+IDR_TRICKWAVET2         WAVE    DISCARDABLE     "TODDHEALER\\T GRUNT1.wav"
+IDR_TRICKWAVEV1         WAVE    DISCARDABLE     "VICC\\laugh1.wav"
+IDR_TRICKWAVEV2         WAVE    DISCARDABLE     "VICC\\woop.wav"
+IDR_TRICKWAVEV3         WAVE    DISCARDABLE     "VICC\\WOW.wav"
+IDR_HOLDWAVEB1          WAVE    DISCARDABLE     "bucky\\BUCKYell.wav"
+IDR_HOLDWAVEB2          WAVE    DISCARDABLE     "bucky\\TAHOO.wav"
+IDR_360WAVEB1           WAVE    DISCARDABLE     "bucky\\BAHEY.wav"
+IDR_360WAVEB2           WAVE    DISCARDABLE     "bucky\\VICBRK.wav"
+IDR_TUBEWAVEB1          WAVE    DISCARDABLE     "bucky\\FREAK.wav"
+IDR_TUBEWAVEB2          WAVE    DISCARDABLE     "bucky\\TUBED.wav"
+IDR_DROPINWAVEB1        WAVE    DISCARDABLE     "bucky\\dropin.wav"
+IDR_DROPINWAVEB2        WAVE    DISCARDABLE     "bucky\\BUCKY.wav"
+IDR_INSANITYWAVEB1      WAVE    DISCARDABLE     "bucky\\BKYLAUF.wav"
+IDR_HOLDWAVES1          WAVE    DISCARDABLE     "SANDY\\GRUNT5.wav"
+IDR_HOLDWAVES2          WAVE    DISCARDABLE     "SANDY\\HIYA2.wav"
+IDR_360WAVES1           WAVE    DISCARDABLE     "SANDY\\LAUGH2.wav"
+IDR_360WAVES2           WAVE    DISCARDABLE     "SANDY\\LAUGH1.wav"
+IDR_TUBEWAVES1          WAVE    DISCARDABLE     "SANDY\\WHOOPY.wav"
+IDR_DROPINWAVES1        WAVE    DISCARDABLE     "SANDY\\SANDRAyell.wav"
+IDR_DROPINWAVES2        WAVE    DISCARDABLE     "SANDY\\WAH.wav"
+IDR_DROPINWAVES3        WAVE    DISCARDABLE     "SANDY\\WHOA.wav"
+IDR_INSANITYWAVES1      WAVE    DISCARDABLE     "SANDY\\SANDY.wav"
+IDR_HOLDWAVET1          WAVE    DISCARDABLE     "TODDHEALER\\HEEHAW.wav"
+IDR_HOLDWAVET2          WAVE    DISCARDABLE     "TODDHEALER\\TYea2.wav"
+IDR_360WAVET1           WAVE    DISCARDABLE     "TODDHEALER\\LAUGH2.wav"
+IDR_360WAVET2           WAVE    DISCARDABLE     "TODDHEALER\\TYeLL2.wav"
+IDR_TUBEWAVET1          WAVE    DISCARDABLE     "TODDHEALER\\LAUGH3.wav"
+IDR_TUBEWAVET2          WAVE    DISCARDABLE     "TODDHEALER\\HEALIT.wav"
+IDR_DROPINWAVET1        WAVE    DISCARDABLE     "TODDHEALER\\TODD2.wav"
+IDR_DROPINWAVET2        WAVE    DISCARDABLE     "TODDHEALER\\BARRELD.wav"
+IDR_INSANITYWAVET1      WAVE    DISCARDABLE     "TODDHEALER\\TODD1.wav"
+IDR_HOLDWAVEV1          WAVE    DISCARDABLE     "VICC\\groan2.wav"
+IDR_HOLDWAVEV2          WAVE    DISCARDABLE     "VICC\\groan.wav"
+IDR_360WAVEV1           WAVE    DISCARDABLE     "VICC\\vic2.wav"
+IDR_360WAVEV2           WAVE    DISCARDABLE     "VICC\\WOW3.wav"
+IDR_TUBEWAVEV1          WAVE    DISCARDABLE     "wave1.bin"
+IDR_TUBEWAVEV2          WAVE    DISCARDABLE     "VICC\\WO.wav"
+IDR_DROPINWAVEV1        WAVE    DISCARDABLE     "VICC\\WO2.wav"
+IDR_DROPINWAVEV2        WAVE    DISCARDABLE     "VICC\\laugh2.wav"
+IDR_DROPINWAVEV3        WAVE    DISCARDABLE     "VICC\\go.wav"
+IDR_INSANITYWAVEV1      WAVE    DISCARDABLE     "VICC\\WOW2.wav"
+IDR_WIPEOUTWAVEB1       WAVE    DISCARDABLE     "bucky\\WEWHO2.wav"
+IDR_WIPEOUTWAVEB2       WAVE    DISCARDABLE     "bucky\\UTAH.wav"
+IDR_WIPEOUTWAVEB3       WAVE    DISCARDABLE     "bucky\\YELL1.wav"
+IDR_WIPEOUTWAVEB4       WAVE    DISCARDABLE     "bucky\\YELL3.wav"
+IDR_WIPEOUTWAVES1       WAVE    DISCARDABLE     "SANDY\\yell3.wav"
+IDR_WIPEOUTWAVES2       WAVE    DISCARDABLE     "SANDY\\yell2.wav"
+IDR_WIPEOUTWAVES3       WAVE    DISCARDABLE     "SANDY\\yell1.wav"
+IDR_WIPEOUTWAVET1       WAVE    DISCARDABLE     "TODDHEALER\\wipeyell.wav"
+IDR_WIPEOUTWAVET2       WAVE    DISCARDABLE     "TODDHEALER\\T YELL1.wav"
+IDR_WIPEOUTWAVEV1       WAVE    DISCARDABLE     "VICC\\YOWW2.wav"
+IDR_WIPEOUTWAVEV2       WAVE    DISCARDABLE     "VICC\\yell3.wav"
+IDR_WIPEOUTWAVEV3       WAVE    DISCARDABLE     "VICC\\YOWW.wav"
+IDR_WIPEOUTWAVEV4       WAVE    DISCARDABLE     "VICC\\yell2.wav"
+IDR_TRICKWAVEB1         WAVE    DISCARDABLE     "bucky\\WEWHO.wav"
+IDR_TRICKWAVEB2         WAVE    DISCARDABLE     "bucky\\GRUNT1.wav"
+IDR_TRICKWAVEB3         WAVE    DISCARDABLE     "bucky\\BARK.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// X
+//
+
+IDR_LEFTWALLX           X       DISCARDABLE     "leftwall.x"
+IDR_WAVEX               X       DISCARDABLE     "newave9jeremy.x"
+IDR_RITEWALLX           X       DISCARDABLE     "ritewall.x"
+IDR_THEBEACHX           X       DISCARDABLE     "thebeach.x"
+IDR_UFOX                X       DISCARDABLE     "ufo.x"
+IDR_DOLPHINX            X       DISCARDABLE     "dolphin.x"
+IDR_PIERX               X       DISCARDABLE     "pier.x"
+IDR_ROCKX               X       DISCARDABLE     "rocks.x"
+IDR_BARRELX             X       DISCARDABLE     "barrel.x"
+IDR_LEFTBOUYX           X       DISCARDABLE     "leftbouy.x"
+IDR_SHARKFINX           X       DISCARDABLE     "sharkfin.x"
+IDR_SHARKHEADX          X       DISCARDABLE     "sharkhed.x"
+IDR_RITEBOUYX           X       DISCARDABLE     "ritebouy.x"
+IDR_CURLX               X       DISCARDABLE     "finlcurl.x"
+IDR_OILRIGX             X       DISCARDABLE     "oilrig2.x"
+IDR_TROPHYX             X       DISCARDABLE     "trophy.x"
+IDR_SHOPGUYSX           X       DISCARDABLE     "shopguys.x"
+IDR_LEEX                X       DISCARDABLE     "lee.x"
+IDR_ALANAX              X       DISCARDABLE     "alana.x"
+IDR_VICX                X       DISCARDABLE     "vic.x"
+IDR_TODDX               X       DISCARDABLE     "todd.x"
+IDR_SANDYX              X       DISCARDABLE     "sandy.x"
+IDR_BUCKYX              X       DISCARDABLE     "bucky.x"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// MIDS
+//
+
+IDR_XTRAMIDS5           MIDS    DISCARDABLE     "xtra5.mds"
+IDR_BUCKYMIDS           MIDS    DISCARDABLE     "bucky.mds"
+IDR_CHOICEMIDS2         MIDS    DISCARDABLE     "choic2.mds"
+IDR_CHOICECONTESTMIDS2  MIDS    DISCARDABLE     "choiccn2.mds"
+IDR_CHOICECONTESTMIDS1  MIDS    DISCARDABLE     "choiccon.mds"
+IDR_CHOICEMIDS1         MIDS    DISCARDABLE     "choice3.mds"
+IDR_XTRAMIDS3           MIDS    DISCARDABLE     "cred2.mds"
+IDR_LOADMIDS            MIDS    DISCARDABLE     "gameload.mds"
+IDR_GAMEOVERMIDS1       MIDS    DISCARDABLE     "gameov5.mds"
+IDR_GAMEOVERMIDS2       MIDS    DISCARDABLE     "gameovr2.mds"
+IDR_HISCOREMIDS2        MIDS    DISCARDABLE     "hiscr2.mds"
+IDR_HISCOREMIDS1        MIDS    DISCARDABLE     "hiskor.mds"
+IDR_LEEMIDS             MIDS    DISCARDABLE     "lee.mds"
+IDR_SANDYMIDS           MIDS    DISCARDABLE     "sandy.mds"
+IDR_TODDMIDS            MIDS    DISCARDABLE     "todd.mds"
+IDR_VICMIDS             MIDS    DISCARDABLE     "vic.mds"
+IDR_XTRAMIDS1           MIDS    DISCARDABLE     "xtra.mds"
+IDR_XTRAMIDS2           MIDS    DISCARDABLE     "xtra10.mds"
+IDR_XTRAMIDS4           MIDS    DISCARDABLE     "xtra4.mds"
+IDR_ALANAMIDS           MIDS    DISCARDABLE     "alana.mds"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SURF                ICON    DISCARDABLE     "surf38.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\surf.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "surf\n\nsurf\n\n\nsurf.Document\nsurf Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DETAILS_MAXFRAMERATE_XFPS "new frame rate"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Wild Ride! 1.1"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\surf.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

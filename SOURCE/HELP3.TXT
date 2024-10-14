@@ -1,0 +1,1 @@
+      Help                       The Save Game  option can only be activated if    you are in    Contest Mode.                   The Load Game    option will    overwrite any    unsaved game    information.  

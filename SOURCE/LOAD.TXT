@@ -1,0 +1,1 @@
+   Load Game                     Scroll through   the list of   available saved  games. Hit the   space bar or  joystick button to load the one    you want!     Loading a game  will erase any   unsaved game    information!  

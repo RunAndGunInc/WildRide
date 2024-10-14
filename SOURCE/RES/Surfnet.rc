@@ -1,0 +1,752 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&file"
+    BEGIN
+        MENUITEM "&save video",                 ID_SAVE_PLAYBACK
+        MENUITEM "&load video",                 ID_LOAD_PLAYBACK
+        MENUITEM "&play video",                 ID_PLAY_PLAYBACK
+        MENUITEM SEPARATOR
+        MENUITEM "&begin capture",              ID_BEGIN_CAPTURE
+        MENUITEM "&end capture",                ID_STOP_CAPTURE
+        MENUITEM SEPARATOR
+        MENUITEM "view &hiscores",              ID_VIEW_HISCORES
+        MENUITEM SEPARATOR
+        MENUITEM "e&xit",                       IDCLOSE
+    END
+    POPUP "&cameras"
+    BEGIN
+        MENUITEM "&main camera\tf1",            ID_MAIN_CAMERA
+        MENUITEM "&helicopter camera\tf2",      ID_HELICOPTER_CAMERA
+        MENUITEM "&tube camera\tf3",            ID_TUBE_CAMERA
+        MENUITEM "&beach camera\tf4",           ID_BEACH_CAMERA
+        MENUITEM "&satellite camera\tf5",       ID_SATELLITE_CAMERA
+        MENUITEM "&rock video camera\tf6",      ID_ROCK_VIDEO_CAMERA
+        MENUITEM SEPARATOR
+        MENUITEM "&auto camera\tf7",            ID_AUTO_CAMERA
+    END
+    POPUP "&details"
+    BEGIN
+        MENUITEM "&current fps\tctrl-f",        ID_FPS
+        MENUITEM SEPARATOR
+        MENUITEM "practice &mode",              ID_PRACTICE
+        MENUITEM SEPARATOR
+        MENUITEM "&breaking wave",              ID_BREAKINGWAVE
+        MENUITEM "&foam",                       ID_FOAM
+        MENUITEM "&gore",                       ID_GORE
+        MENUITEM "hori&zon",                    ID_HORIZON
+        MENUITEM "&sky",                        ID_SKYMAP
+        MENUITEM "speed-&o-meter",              ID_SPEEDOMETER_TOGGLE
+        MENUITEM "s&pray",                      ID_SPRAY
+        MENUITEM "&wave textures",              ID_WAVE_TEXTURES
+        MENUITEM SEPARATOR
+        MENUITEM "&halfres",                    ID_HALFRES
+        POPUP "fu&llscreen"
+        BEGIN
+            MENUITEM "",                            ID_FULLSCREEN0
+        END
+    END
+    POPUP "&audio"
+    BEGIN
+        MENUITEM "&midi music",                 ID_MIDI_MUSIC
+        MENUITEM "&cd music",                   ID_CD_MUSIC
+        MENUITEM "&sounds",                     ID_SOUND_FX
+        MENUITEM "&announcer",                  ID_NARATION
+    END
+    POPUP "&network", GRAYED
+    BEGIN
+        MENUITEM "&break connection",           ID_BREAK_NETWORK
+        MENUITEM "list &players",               ID_LIST_PLAYERS
+        MENUITEM "&load session",               ID_LOAD_SESSION
+        MENUITEM "&save session",               ID_SAVE_SESSION
+        MENUITEM SEPARATOR
+    END
+    POPUP "&help"
+    BEGIN
+//        MENUITEM "&help",                       ID_HELPF
+        MENUITEM "&about wild ride...",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 169, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "about wild ride"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_SURF,IDI_SURF,11,17,18,20
+    CTEXT           "wild ride alpha 1.0.2.5\n\nread the readme.txt file.\n\nsend bug reports, information, observations & whatnot to negspect@runandgun.com.",
+                    IDC_STATIC,32,7,95,61,SS_NOPREFIX
+    LTEXT           "copyright © 1998 RUNANDGUN! Inc.",IDC_STATIC,31,68,131,
+                    8
+    DEFPUSHBUTTON   "ok",IDOK,130,7,32,14,WS_GROUP
+END
+
+IDD_NET_CREATE DIALOG DISCARDABLE  0, 0, 174, 58
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "wild ride - network nonsense"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "create session",ID_START_SESSION,7,29,54,20
+    PUSHBUTTON      "join session",ID_JOIN_SESSION,66,29,51,20
+    PUSHBUTTON      "cancel",IDCANCEL,122,29,45,20
+    ICON            IDI_SURF,IDI_SURF,7,5,21,20
+    CTEXT           "create a new network game, or join one that is already started.",
+                    IDC_STATIC,42,5,125,21,SS_NOPREFIX
+END
+
+IDD_NET_SEL_SESSION DIALOG DISCARDABLE  0, 0, 161, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "wild ride - select a network session"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "ok",IDOK,50,87,50,14
+    PUSHBUTTON      "cancel",IDCANCEL,104,87,50,14
+    LISTBOX         IDC_LB_SESSION,7,7,147,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    ICON            IDI_SURF,IDI_SURF,7,81,18,20
+    EDITTEXT        IDC_PLAYER_NAME,70,66,84,16,ES_AUTOHSCROLL
+    LTEXT           "your name:",IDC_STATIC,7,69,51,13
+END
+
+IDD_NET_NAMES DIALOG DISCARDABLE  0, 0, 186, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "wild ride - select some names or whatever"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "ok",IDOK,74,47,50,14
+    PUSHBUTTON      "cancel",IDCANCEL,129,47,50,14
+    EDITTEXT        IDC_SESSION_NAME,7,24,84,16,ES_AUTOHSCROLL
+    LTEXT           "session name:",IDC_STATIC,7,7,82,13
+    EDITTEXT        IDC_PLAYER_NAME,95,24,84,16,ES_AUTOHSCROLL
+    LTEXT           "your name:",IDC_STATIC,97,7,82,13
+    ICON            IDI_SURF,IDI_SURF,7,41,18,20
+END
+
+IDD_LEROY DIALOG DISCARDABLE  0, 0, 213, 124
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Leroy's check list"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "ok",IDOK,77,103,40,14
+    PUSHBUTTON      "cancel",IDCANCEL,166,103,40,14
+    CONTROL         391,IDC_STATIC,"Static",SS_BITMAP,7,7,67,110
+    CONTROL         "smoke shack on 6th line      (re-entry)",IDC_TIME,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,7,129,11
+    CONTROL         "mid 70's automobile             (extra life)",IDC_LIFE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,19,129,11
+    CONTROL         "retail tobacco products            (score)",IDC_SCORE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,32,129,11
+    CONTROL         "warm fifty               (summon semjase)",IDC_UFO,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,45,129,11
+    CONTROL         "twirling brine               (increase stats)",
+                    IDC_STATSUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,58,
+                    129,11
+    CONTROL         "dinner from kfc      (beach nav mdoe)",IDC_NAVMODE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,71,129,11
+    CONTROL         "pst and gst exemption      (tron mode)",IDC_TRON,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,84,129,11
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,9,4,7
+ PRODUCTVERSION 1,9,4,7
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "RUNANDGUN! inc.\0"
+            VALUE "FileDescription", "wild ride\0"
+            VALUE "FileVersion", "1, 9, 4, 7\0"
+            VALUE "InternalName", "realtime 3d surfing\0"
+            VALUE "LegalCopyright", "Copyright © 1998\0"
+            VALUE "OriginalFilename", "surf.exe\0"
+            VALUE "ProductName", "Wild Ride\0"
+            VALUE "ProductVersion", "1, 9, 4, 7\0"
+        END
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "RUNANDGUN! inc.\0"
+            VALUE "FileDescription", "wild ride\0"
+            VALUE "FileVersion", "1, 9, 4, 7\0"
+            VALUE "InternalName", "realtime 3d surfing\0"
+            VALUE "LegalCopyright", "Copyright © 1998\0"
+            VALUE "OriginalFilename", "surf.exe\0"
+            VALUE "ProductName", "Wild Ride\0"
+            VALUE "ProductVersion", "1, 9, 4, 7\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200, 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_NET_CREATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        VERTGUIDE, 84
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_NET_SEL_SESSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_NET_NAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_LEROY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS DISCARDABLE 
+BEGIN
+    "F",            ID_FPS,                 VIRTKEY, CONTROL, NOINVERT
+    "U",            ID_UFO,                 VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_MAIN_CAMERA,         VIRTKEY, NOINVERT
+    VK_F2,          ID_HELICOPTER_CAMERA,   VIRTKEY, NOINVERT
+    VK_F3,          ID_TUBE_CAMERA,         VIRTKEY, NOINVERT
+    VK_F4,          ID_BEACH_CAMERA,        VIRTKEY, NOINVERT
+    VK_F5,          ID_SATELLITE_CAMERA,    VIRTKEY, NOINVERT
+    VK_F6,          ID_ROCK_VIDEO_CAMERA,   VIRTKEY, NOINVERT
+    VK_F7,          ID_AUTO_CAMERA,         VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ALPHABET            BITMAP  DISCARDABLE     "alphabet.BMP"
+IDB_INTERSKY            BITMAP  DISCARDABLE     "intrsky.bmp"
+IDB_INTERFACE           BITMAP  DISCARDABLE     "newinterface.BMP"
+IDB_SPINSPEED           BITMAP  DISCARDABLE     "spin_speed.bmp"
+IDB_SURFSKY             BITMAP  DISCARDABLE     "surfsky.bmp"
+IDB_LEROY               BITMAP  DISCARDABLE     "indian.bmp"
+IDB_1947SPLASH          BITMAP  DISCARDABLE     "finalsplash.BMP"
+IDB_LOGO                BITMAP  DISCARDABLE     "logo.BMP"
+IDB_NAV                 BITMAP  DISCARDABLE     "nav.BMP"
+IDB_ICONSNO             BITMAP  DISCARDABLE     "newiconz1.BMP"
+IDB_ICONSYES            BITMAP  DISCARDABLE     "newiconz2.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PPM
+//
+
+IDR_WAVEMAP0            PPM     DISCARDABLE     "Newav1.ppm"
+IDR_WAVEMAP1            PPM     DISCARDABLE     "newav2.ppm"
+IDR_WAVEMAP2            PPM     DISCARDABLE     "Newav3.ppm"
+IDR_WAVEMAP3            PPM     DISCARDABLE     "Newav4.ppm"
+IDR_WAVEMAP4            PPM     DISCARDABLE     "Newav5.ppm"
+IDR_WAVEMAP5            PPM     DISCARDABLE     "Newav6.ppm"
+IDR_WAVEMAP6            PPM     DISCARDABLE     "Newav7.ppm"
+IDR_WAVEMAP7            PPM     DISCARDABLE     "Newav8.ppm"
+IDR_LEFTWALLMAP         PPM     DISCARDABLE     "leftwall.ppm"
+IDR_RITEWALLMAP         PPM     DISCARDABLE     "ritewall.ppm"
+IDR_UFOMAP              PPM     DISCARDABLE     "ufomap.ppm"
+IDR_FOAMMAP0            PPM     DISCARDABLE     "FOAM0.ppm"
+IDR_FOAMMAP1            PPM     DISCARDABLE     "FOAM1.ppm"
+IDR_FOAMMAP2            PPM     DISCARDABLE     "FOAM2.ppm"
+IDR_FOAMMAP3            PPM     DISCARDABLE     "FOAM3.ppm"
+IDR_FOAMMAP4            PPM     DISCARDABLE     "foam4.ppm"
+IDR_FOAMMAP5            PPM     DISCARDABLE     "foam5.ppm"
+IDR_FOAMMAP6            PPM     DISCARDABLE     "foam6.ppm"
+IDR_FOAMMAP7            PPM     DISCARDABLE     "foam7.ppm"
+IDR_ALANAMAP            PPM     DISCARDABLE     "Alana.ppm"
+IDR_BARRELMAP           PPM     DISCARDABLE     "BARREL.ppm"
+IDR_BUCKYMAP            PPM     DISCARDABLE     "BUCKY.ppm"
+IDR_BUILDALLMAP         PPM     DISCARDABLE     "buildall.ppm"
+IDR_LEEMAP              PPM     DISCARDABLE     "lee.ppm"
+IDR_SANDMAP             PPM     DISCARDABLE     "sandmaster.ppm"
+IDR_SANDYMAP            PPM     DISCARDABLE     "sandy.ppm"
+IDR_THATCHMAP           PPM     DISCARDABLE     "thatch.ppm"
+IDR_HLXWALLMAP          PPM     DISCARDABLE     "hlxwalls.ppm"
+IDR_VANMAP              PPM     DISCARDABLE     "vanetc.ppm"
+IDR_SHUTTERMAP          PPM     DISCARDABLE     "hlshutr.ppm"
+IDR_OPTIONMAP           PPM     DISCARDABLE     "options.ppm"
+IDR_SURFSIGNMAP         PPM     DISCARDABLE     "surfsign.ppm"
+IDR_WATERMAP            PPM     DISCARDABLE     "watermaster.ppm"
+IDR_TODDMAP             PPM     DISCARDABLE     "todd.ppm"
+IDR_VICMAP              PPM     DISCARDABLE     "vic.ppm"
+IDR_SPRAYMAP0           PPM     DISCARDABLE     "spraydekl0.ppm"
+IDR_SPRAYMAP1           PPM     DISCARDABLE     "spraydekl1.ppm"
+IDR_SPRAYMAP2           PPM     DISCARDABLE     "spraydekl2.ppm"
+IDR_SPRAYMAP3           PPM     DISCARDABLE     "spraydekl3.ppm"
+IDR_SPRAYMAP4           PPM     DISCARDABLE     "spraydekl4.ppm"
+IDR_SPRAYMAP5           PPM     DISCARDABLE     "spraydekl5.ppm"
+IDR_SPRAYMAP6           PPM     DISCARDABLE     "spraydekl6.ppm"
+IDR_SPRAYMAP7           PPM     DISCARDABLE     "spraydekl7.ppm"
+IDR_BLOODMAP0           PPM     DISCARDABLE     "blood3.ppm"
+IDR_BLOODMAP1           PPM     DISCARDABLE     "blood4.ppm"
+IDR_BLOODMAP2           PPM     DISCARDABLE     "blood5.ppm"
+IDR_BLOODMAP3           PPM     DISCARDABLE     "blood6.ppm"
+IDR_BLOODMAP4           PPM     DISCARDABLE     "blood7.ppm"
+IDR_BLOODMAP5           PPM     DISCARDABLE     "blood8.ppm"
+IDR_PIERMAP             PPM     DISCARDABLE     "piermap.ppm"
+IDR_WRBEACHMAP          PPM     DISCARDABLE     "WRBEACH.ppm"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// MIDS
+//
+
+IDR_CHOICEMIDI          MIDS    DISCARDABLE     "choic2.mds"
+IDR_ALANAMIDI           MIDS    DISCARDABLE     "alaina.mds"
+IDR_BUCKYMIDI           MIDS    DISCARDABLE     "bucky.mds"
+IDR_LOADMIDI            MIDS    DISCARDABLE     "cred2.mds"
+IDR_CREDITSMIDI         MIDS    DISCARDABLE     "credits.mds"
+IDR_GAMEOVER1MIDI       MIDS    DISCARDABLE     "gameover.mds"
+IDR_GAMEOVER2MIDI       MIDS    DISCARDABLE     "gameovr2.mds"
+IDR_HISCOREMIDI         MIDS    DISCARDABLE     "hiscore.mds"
+IDR_VICMIDI             MIDS    DISCARDABLE     "hiscr2.mds"
+IDR_LEEMIDI             MIDS    DISCARDABLE     "lee.mds"
+IDR_SANDYMIDI           MIDS    DISCARDABLE     "sandy.mds"
+IDR_TODDMIDI            MIDS    DISCARDABLE     "todd.mds"
+IDR_ALANACDMIDI         MIDS    DISCARDABLE     "alanacd.mds"
+IDR_BUCKYCDMIDI         MIDS    DISCARDABLE     "buckycd.mds"
+IDR_LEECDMIDI           MIDS    DISCARDABLE     "leecd.mds"
+IDR_SANDYCDMIDI         MIDS    DISCARDABLE     "sandycd.mds"
+IDR_TODDCDMIDI          MIDS    DISCARDABLE     "toddcd.mds"
+IDR_VICCDMIDI           MIDS    DISCARDABLE     "viccd.mds"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_ALANAYELLWAVE       WAVE    DISCARDABLE     "ALAIN.wav"
+IDR_SINKWAVE            WAVE    DISCARDABLE     "bluber1.wav"
+IDR_BUCKYYELLWAVE       WAVE    DISCARDABLE     "BUCKY.wav"
+IDR_LEEYELLWAVE         WAVE    DISCARDABLE     "LEE.wav"
+IDR_SANDYYELLWAVE       WAVE    DISCARDABLE     "SANDY.wav"
+IDR_TODDYELLWAVE        WAVE    DISCARDABLE     "TODD1.wav"
+IDR_VICYELLWAVE         WAVE    DISCARDABLE     "vic2.wav"
+IDR_OCEANWAVE           WAVE    DISCARDABLE     "WAVMIX2.wav"
+IDR_GAMEOVERWAVE        WAVE    DISCARDABLE     "gameover.wav"
+IDR_SEAGULLWAVE         WAVE    DISCARDABLE     "GULLS.wav"
+IDR_SPLASHWAVE          WAVE    DISCARDABLE     "splash2.wav"
+IDR_UFOWAVE             WAVE    DISCARDABLE     "ufo.wav"
+IDR_GRUNTWAVE           WAVE    DISCARDABLE     "TODD2.wav"
+IDR_180WAVE1            WAVE    DISCARDABLE     "180.wav"
+IDR_180WAVE2            WAVE    DISCARDABLE     "180-2.wav"
+IDR_360WAVE1            WAVE    DISCARDABLE     "360.wav"
+IDR_360WAVE2            WAVE    DISCARDABLE     "360-2.wav"
+IDR_540WAVE1            WAVE    DISCARDABLE     "540.wav"
+IDR_540WAVE2            WAVE    DISCARDABLE     "540-2.wav"
+IDR_720WAVE1            WAVE    DISCARDABLE     "720.wav"
+IDR_720WAVE2            WAVE    DISCARDABLE     "720-2.wav"
+IDR_900WAVE1            WAVE    DISCARDABLE     "900.wav"
+IDR_900WAVE2            WAVE    DISCARDABLE     "900-2.wav"
+IDR_DOUBLEINSANEWAVE1   WAVE    DISCARDABLE     "DOUBL.wav"
+IDR_DOUBLEINSANEWAVE2   WAVE    DISCARDABLE     "DOUBL2.wav"
+IDR_TRIPLEINSANEWAVE1   WAVE    DISCARDABLE     "TRIPL2.wav"
+IDR_TRIPLEINSANEWAVE2   WAVE    DISCARDABLE     "TRIPL3.wav"
+IDR_QUADRUPLEINSANEWAVE1 WAVE    DISCARDABLE     "QUAD.wav"
+IDR_QUADRUPLEINSANEWAVE2 WAVE    DISCARDABLE     "QUAD2.wav"
+IDR_SURFWAVE1           WAVE    DISCARDABLE     "SURF2.wav"
+IDR_SURFWAVE2           WAVE    DISCARDABLE     "SURF3.wav"
+IDR_SURFWAVE3           WAVE    DISCARDABLE     "SURF4.wav"
+IDR_BARRELWAVE          WAVE    DISCARDABLE     "BARREL1.wav"
+IDR_BOUYWAVE            WAVE    DISCARDABLE     "collis2.wav"
+IDR_UFOCWAVE            WAVE    DISCARDABLE     "crowd.wav"
+IDR_ROCKWAVE            WAVE    DISCARDABLE     "NEWROCK.wav"
+IDR_PLIDWAVE            WAVE    DISCARDABLE     "collis1.wav"
+IDR_POSTWAVE            WAVE    DISCARDABLE     "CRUNCH.wav"
+IDR_OUCHWAVE            WAVE    DISCARDABLE     "OUCH.wav"
+IDR_NEXTYEARWAVE        WAVE    DISCARDABLE     "NXTYEAR.wav"
+IDR_REEFWAVE            WAVE    DISCARDABLE     "REEF3.wav"
+IDR_MANGLEDWAVE         WAVE    DISCARDABLE     "MANGLD3.wav"
+IDR_HISCOREWAVE1        WAVE    DISCARDABLE     "HISCOR2.wav"
+IDR_HISCOREWAVE2        WAVE    DISCARDABLE     "HISCOR3.wav"
+IDR_BOUYWAVE2           WAVE    DISCARDABLE     "BOUY.wav"
+IDR_ROCKWAVE2           WAVE    DISCARDABLE     "NEWROC3.wav"
+IDR_SHARKWAVE           WAVE    DISCARDABLE     "SKRK+.wav"
+IDR_SHARKWAVE2          WAVE    DISCARDABLE     "SKRK2.wav"
+IDR_BARRELWAVE2         WAVE    DISCARDABLE     "NEWROC2.wav"
+IDR_PLIDWAVE2           WAVE    DISCARDABLE     "PIER3.wav"
+IDR_POSTWAVE2           WAVE    DISCARDABLE     "PEIR2.wav"
+IDR_STEAMSHIPWAVE       WAVE    DISCARDABLE     "steamshi.wav"
+IDR_UFOSTOPWAVE         WAVE    DISCARDABLE     "ufo1.wav"
+IDR_DOLPHINWAVE         WAVE    DISCARDABLE     "dolfin3.wav"
+IDR_DOLPHINWAVE2        WAVE    DISCARDABLE     "dolfin4.wav"
+IDR_BREAKHITWAVE1       WAVE    DISCARDABLE     "HITBREK.wav"
+IDR_BREAKHITWAVE2       WAVE    DISCARDABLE     "HITBREK2.wav"
+IDR_TUBEWAVE            WAVE    DISCARDABLE     "TUBE2.wav"
+IDR_DOLPHINHITWAVE1     WAVE    DISCARDABLE     "DOLFHIT.wav"
+IDR_DOLPHINHITWAVE2     WAVE    DISCARDABLE     "DOLFHIT2.wav"
+IDR_OILRIGWAVE1         WAVE    DISCARDABLE     "oilrig.wav"
+IDR_OILRIGWAVE2         WAVE    DISCARDABLE     "oilrig2.wav"
+IDR_OILLEGWAVE1         WAVE    DISCARDABLE     "oilleg.wav"
+IDR_OILLEGWAVE2         WAVE    DISCARDABLE     "oilleg2.wav"
+IDR_ALANABAILWAVE       WAVE    DISCARDABLE     "ALAINYELL.wav"
+IDR_BUCKYBAILWAVE       WAVE    DISCARDABLE     "BKYLAUF.wav"
+IDR_LEEBAILWAVE         WAVE    DISCARDABLE     "LEE2.wav"
+IDR_SANDYBAILWAVE       WAVE    DISCARDABLE     "SANDRAyell.wav"
+IDR_TODDBAILWAVE        WAVE    DISCARDABLE     "TOddYELL.wav"
+IDR_VICBAILWAVE         WAVE    DISCARDABLE     "vicYELL.wav"
+IDR_LANDINGWAVE         WAVE    DISCARDABLE     "SPRAY7.wav"
+IDR_ALIENWAVE           WAVE    DISCARDABLE     "ALIEN2.wav"
+IDR_AMBULANCEWAVE       WAVE    DISCARDABLE     "AMB2.wav"
+IDR_BARRELDAVEWAVE1     WAVE    DISCARDABLE     "BARRELdave.wav"
+IDR_BARRELDAVEWAVE2     WAVE    DISCARDABLE     "BARRELdave3.wav"
+IDR_BLAMOWAVE           WAVE    DISCARDABLE     "BLAMO.wav"
+IDR_DOLPHINDISTURBWAVE  WAVE    DISCARDABLE     "DOLPHINdisturb.wav"
+IDR_GAMEOVERDAVEWAVE1   WAVE    DISCARDABLE     "GAMEOV7.wav"
+IDR_GAMEOVERDAVEWAVE2   WAVE    DISCARDABLE     "GAMEOVR3.wav"
+IDR_GAMEOVERDAVEWAVE3   WAVE    DISCARDABLE     "GAMEOVR6.wav"
+IDR_GROOVYTUBEWAVE1     WAVE    DISCARDABLE     "GROOVY.wav"
+IDR_GROOVYTUBEWAVE2     WAVE    DISCARDABLE     "GROOVY3.wav"
+IDR_MUSTHURTWAVE        WAVE    DISCARDABLE     "MUSTHURT.wav"
+IDR_OHHWAVE1            WAVE    DISCARDABLE     "OHH2.wav"
+IDR_OHHWAVE2            WAVE    DISCARDABLE     "OHH3.wav"
+IDR_ORBITWAVE           WAVE    DISCARDABLE     "ORBIT.wav"
+IDR_PIERACTIONWAVE      WAVE    DISCARDABLE     "PIERaction.wav"
+IDR_ROCKDAVEWAVE        WAVE    DISCARDABLE     "ROCKdave.wav"
+IDR_SURFSCHOOLWAVE      WAVE    DISCARDABLE     "SCOOL2.wav"
+IDR_SCREAMWAVE1         WAVE    DISCARDABLE     "SCREAM3.wav"
+IDR_SCREAMWAVE2         WAVE    DISCARDABLE     "SCREAM6.wav"
+IDR_SHARKDAVEWAVE1      WAVE    DISCARDABLE     "SHARKarama.wav"
+IDR_SHARKDAVEWAVE2      WAVE    DISCARDABLE     "SHARKarama2.wav"
+IDR_UFODAVEWAVE1        WAVE    DISCARDABLE     "UFOdave.wav"
+IDR_UFODAVEWAVE2        WAVE    DISCARDABLE     "UFOdave2.wav"
+IDR_WAGONWAVE           WAVE    DISCARDABLE     "WAGON.wav"
+IDR_WHAMOWAVE           WAVE    DISCARDABLE     "WHAMO.wav"
+IDR_WIPEOUTWAVE1        WAVE    DISCARDABLE     "WIPE1.wav"
+IDR_WIPEOUTWAVE2        WAVE    DISCARDABLE     "WIPE3.wav"
+IDR_WIPEOUTWAVE3        WAVE    DISCARDABLE     "WIPE6.wav"
+IDR_WIPEOUTWAVE4        WAVE    DISCARDABLE     "WIPE8.wav"
+IDR_WUSSYWAVE           WAVE    DISCARDABLE     "WUSSY.wav"
+IDR_TRICKWAVE1          WAVE    DISCARDABLE     "helotrik.wav"
+IDR_TRICKWAVE2          WAVE    DISCARDABLE     "trik8.wav"
+IDR_TRICKWAVE3          WAVE    DISCARDABLE     "TRIK1.wav"
+IDR_TRICKWAVE4          WAVE    DISCARDABLE     "TRIK2.wav"
+IDR_TRICKWAVE5          WAVE    DISCARDABLE     "TRIK3.wav"
+IDR_TRICKWAVE6          WAVE    DISCARDABLE     "TRIK4.wav"
+IDR_TRICKWAVE7          WAVE    DISCARDABLE     "TRIK6.wav"
+IDR_TRICKWAVE8          WAVE    DISCARDABLE     "TRIK7.wav"
+IDR_TRICKWAVE9          WAVE    DISCARDABLE     "TRICK.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// X
+//
+
+IDR_ALANAX              X       DISCARDABLE     "alana.x"
+IDR_BUCKYX              X       DISCARDABLE     "bucky.x"
+IDR_LEEX                X       DISCARDABLE     "lee.x"
+IDR_LEFTWALLX           X       DISCARDABLE     "leftwall.x"
+IDR_WAVEX               X       DISCARDABLE     "newave9jeremy.x"
+IDR_RITEWALLX           X       DISCARDABLE     "ritewall.x"
+IDR_SANDYX              X       DISCARDABLE     "sandy.x"
+IDR_THEBEACHX           X       DISCARDABLE     "thebeach.x"
+IDR_TODDX               X       DISCARDABLE     "todd.x"
+IDR_UFOX                X       DISCARDABLE     "ufo.x"
+IDR_VICX                X       DISCARDABLE     "vic.x"
+IDR_WAVEFRAME01X        X       DISCARDABLE     "wavey01.x"
+IDR_WAVEFRAME02X        X       DISCARDABLE     "wavey02.x"
+IDR_WAVEFRAME03X        X       DISCARDABLE     "wavey03.x"
+IDR_WAVEFRAME04X        X       DISCARDABLE     "wavey04.x"
+IDR_WAVEFRAME05X        X       DISCARDABLE     "wavey05.x"
+IDR_WAVEFRAME06X        X       DISCARDABLE     "wavey06.x"
+IDR_WAVEFRAME07X        X       DISCARDABLE     "wavey07.x"
+IDR_WAVEFRAME08X        X       DISCARDABLE     "wavey08.x"
+IDR_WAVEFRAME00X        X       DISCARDABLE     "wavey00.x"
+IDR_DOLPHINX            X       DISCARDABLE     "dolphin.x"
+IDR_PIERX               X       DISCARDABLE     "pier.x"
+IDR_ROCKX               X       DISCARDABLE     "rocks.x"
+IDR_BARRELX             X       DISCARDABLE     "barrel.x"
+IDR_LEFTBOUYX           X       DISCARDABLE     "leftbouy.x"
+IDR_SHARKFINX           X       DISCARDABLE     "sharkfin.x"
+IDR_SHARKHEADX          X       DISCARDABLE     "sharkhed.x"
+IDR_RITEBOUYX           X       DISCARDABLE     "ritebouy.x"
+IDR_CURLX               X       DISCARDABLE     "finlcurl.x"
+IDR_OILRIGX             X       DISCARDABLE     "oilrig2.x"
+IDR_TROPHYX             X       DISCARDABLE     "trophy.x"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SURF                ICON    DISCARDABLE     "surf33.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "surf\n\nsurf\n\n\nsurf.Document\nsurf Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DETAILS_MAXFRAMERATE_XFPS "new frame rate"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "wild ride beta 1.9.4.7"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENC)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\surf.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Canada) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\surf.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

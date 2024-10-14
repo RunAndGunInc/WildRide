@@ -1,0 +1,17 @@
+WILD RIDE! TM Pre Release Version 1.0
+
+This is a fully functional pre release version of WILD RIDE! TM.   The first update patch will be available soon, and include features such as saving and replaying realtime gameplay data, and multiplayer network gameplay.  Please contact the developer, RUNANDGUN! Inc. for more information.
+
+2241 S. Michigan Ave.
+Chicago Il 60616
+tel 312 225 1211
+fax 312 225 5943
+
+KNOWN BUGS IN PRERELEASE VERSION 1.0.
+
+1. Gameplay Display Discoloration.
+
+After the player has chosen a character and enters gameplay mode to surf, the colors in the scene, especially the wave texture maps, are in a reduced pallete.  Simply drag the edge of the window slightly larger or smaller.  This will reset the rendered scen to the proper display  mode. 
+
+2. 
+
